@@ -23,7 +23,7 @@ func main() {
 		fmt.Printf("%s -> %s\n", k, v)
 	}
 
-	for i, c := range "golang" {
+	for i, c := range "golan가나다" {
 		fmt.Printf("%d -> %c\n", i, c)
 	}
 }
