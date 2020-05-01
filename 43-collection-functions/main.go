@@ -19,6 +19,7 @@ import (
 // may be clearest to just inline the collection-manipulating code directly,
 // instead of creating and calling a helper function.
 
+// 일치하는 원소 위치
 func Index(strs []string, s string) int {
 	for i, v := range strs {
 		if v == s {
@@ -28,10 +29,12 @@ func Index(strs []string, s string) int {
 	return -1
 }
 
+// 일치하는 원소 존재 여부
 func Include(strs []string, s string) bool {
 	return Index(strs, s) >= 0
 }
 
+// 조건 (f func())에 맞는 원소 존재 여부
 func Any(strs []string, f func(string) bool) bool {
 	for _, v := range strs {
 		if f(v) {
@@ -41,6 +44,7 @@ func Any(strs []string, f func(string) bool) bool {
 	return false
 }
 
+// 조건 (f func())에 모두 만족 여부
 func All(strs []string, f func(string) bool) bool {
 	for _, v := range strs {
 		if !f(v) {
@@ -50,6 +54,7 @@ func All(strs []string, f func(string) bool) bool {
 	return true
 }
 
+//  조건 (f func())에 만족하는 원소 필터
 func Filter(strs []string, f func(string) bool) []string {
 	filtered := make([]string, 0)
 	for _, v := range strs {
@@ -60,6 +65,7 @@ func Filter(strs []string, f func(string) bool) []string {
 	return filtered
 }
 
+// 입력 -> 함수 (f func()) -> 결과 저장
 func Map(strs []string, f func(string) string) []string {
 	mapped := make([]string, len(strs))
 	for i, v := range strs {
