@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 type point struct {
@@ -70,6 +71,11 @@ func main() {
 	// works also for strings
 	fmt.Printf("|%6s|%6s|\n", "foo", "b")
 	fmt.Printf("|%-6s|%-6s|\n", "foo", "b")
+
+	s := fmt.Sprintf("a %s", "string")
+	fmt.Println(s)
+
+	fmt.Fprintf(os.Stderr, "an %s\n", "error")
 
 	// output:
 	// {1 2}
