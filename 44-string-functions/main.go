@@ -5,6 +5,9 @@ import (
 	s "strings"
 )
 
+// go doc strings : to find api of strings
+
+// Function as variable
 var p = fmt.Println
 
 func main() {
@@ -12,7 +15,7 @@ func main() {
 	p("Count:", s.Count("test", "t"))
 	p("HasPrefix:", s.HasPrefix("test", "te"))
 	p("HasSuffix:", s.HasSuffix("test", "st"))
-	p("Index:", s.Index("test", "e"))
+	p("Index:", s.Index("testtest", "e"))
 	p("Join:", s.Join([]string{"this", "is", "a", "test"}, "-"))
 	p("Repeat:", s.Repeat("NaN", 5))
 	p("Replace:", s.Replace("foo", "o", "O", -1))
